@@ -1,0 +1,504 @@
+{
+  "addons": {
+    "mev-boost": {
+      "enable": {
+        "default": false,
+        "description": "Whether to enable MEV-Boost.",
+        "example": null,
+        "type": "bool"
+      },
+      "endpoint": {
+        "default": "http://127.0.0.1:18550",
+        "description": "Listening interface for the MEV-Boost server.",
+        "example": null,
+        "type": "str"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      }
+    },
+    "ssv-node": {
+      "dataDir": {
+        "default": "/var/mnt/addons/ssv",
+        "description": "Path to a persistent directory to store the node's database.",
+        "example": null,
+        "type": "path"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      },
+      "privateKeyFile": {
+        "default": "/var/mnt/addons/ssv/ssv_operator_key",
+        "description": "Path to the private SSV operator key.",
+        "example": null,
+        "type": "nullOr (path)"
+      },
+      "privateKeyPasswordFile": {
+        "default": "/var/mnt/addons/ssv/password",
+        "description": "Path to the password file of SSV operator key",
+        "example": null,
+        "type": "nullOr (path)"
+      }
+    }
+  },
+  "consensus": {
+    "lighthouse": {
+      "dataDir": {
+        "default": "/var/mnt/lighthouse",
+        "description": "Data directory for the blockchain.",
+        "example": null,
+        "type": "path"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable Lighthouse.",
+        "example": null,
+        "type": "bool"
+      },
+      "endpoint": {
+        "default": "http://127.0.0.1:5052",
+        "description": "HTTP server listening interface.",
+        "example": null,
+        "type": "str"
+      },
+      "execEndpoint": {
+        "default": "http://127.0.0.1:8551",
+        "description": "Server endpoint for an execution layer JWT-authenticated HTTP JSON-RPC connection.",
+        "example": null,
+        "type": "str"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      },
+      "jwtSecretFile": {
+        "default": null,
+        "description": "Path to the token that ensures safe connection between CL and EL.",
+        "example": "/var/mnt/lighthouse/jwt.hex",
+        "type": "nullOr (path)"
+      },
+      "slasher": {
+        "enable": {
+          "default": false,
+          "description": "Whether to enable slasher.",
+          "example": null,
+          "type": "bool"
+        },
+        "historyLength": {
+          "default": 4096,
+          "description": "Number of epochs to store.",
+          "example": null,
+          "type": "int"
+        },
+        "maxDatabaseSize": {
+          "default": 256,
+          "description": "Maximum size of the slasher database in gigabytes.",
+          "example": null,
+          "type": "int"
+        }
+      }
+    },
+    "nimbus": {
+      "dataDir": {
+        "default": "/var/mnt/nimbus",
+        "description": "Data directory for the blockchain.",
+        "example": null,
+        "type": "path"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable Nimbus.",
+        "example": null,
+        "type": "bool"
+      },
+      "endpoint": {
+        "default": "http://127.0.0.1:5052",
+        "description": "JSON-HTTP server listening interface.",
+        "example": null,
+        "type": "str"
+      },
+      "execEndpoint": {
+        "default": "http://127.0.0.1:8551",
+        "description": "Server endpoint for an execution layer JWT-authenticated HTTP JSON-RPC connection.",
+        "example": null,
+        "type": "str"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      },
+      "jwtSecretFile": {
+        "default": null,
+        "description": "Path to the token that ensures safe connection between CL and EL.",
+        "example": "/var/mnt/nimbus/jwt.hex",
+        "type": "nullOr (path)"
+      }
+    },
+    "prysm": {
+      "dataDir": {
+        "default": "/var/mnt/prysm",
+        "description": "Data directory for the blockchain.",
+        "example": null,
+        "type": "path"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable Prysm.",
+        "example": null,
+        "type": "bool"
+      },
+      "endpoint": {
+        "default": "http://127.0.0.1:3500",
+        "description": "JSON-HTTP server listening interface.",
+        "example": null,
+        "type": "str"
+      },
+      "execEndpoint": {
+        "default": "http://127.0.0.1:8551",
+        "description": "Server endpoint for an execution layer JWT-authenticated HTTP JSON-RPC connection.",
+        "example": null,
+        "type": "str"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      },
+      "jwtSecretFile": {
+        "default": null,
+        "description": "Path to the token that ensures safe connection between CL and EL.",
+        "example": "/var/mnt/prysm/jwt.hex",
+        "type": "nullOr (path)"
+      },
+      "slasher": {
+        "enable": {
+          "default": false,
+          "description": "Whether to enable historical slasher.",
+          "example": null,
+          "type": "bool"
+        }
+      }
+    },
+    "teku": {
+      "dataDir": {
+        "default": "/var/mnt/teku",
+        "description": "Data directory for the blockchain.",
+        "example": null,
+        "type": "path"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable Teku.",
+        "example": null,
+        "type": "bool"
+      },
+      "endpoint": {
+        "default": "http://127.0.0.1:5051",
+        "description": "JSON-HTTP server listening interface.",
+        "example": null,
+        "type": "str"
+      },
+      "execEndpoint": {
+        "default": "http://127.0.0.1:8551",
+        "description": "Server endpoint for an execution layer JWT-authenticated HTTP JSON-RPC connection.",
+        "example": null,
+        "type": "str"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      },
+      "jwtSecretFile": {
+        "default": null,
+        "description": "Path to the token that ensures safe connection between CL and EL.",
+        "example": "/var/mnt/teku/jwt.hex",
+        "type": "nullOr (path)"
+      }
+    }
+  },
+  "execution": {
+    "besu": {
+      "dataDir": {
+        "default": "/var/mnt/besu",
+        "description": "Data directory for the blockchain.",
+        "example": null,
+        "type": "path"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable Besu.",
+        "example": null,
+        "type": "bool"
+      },
+      "endpoint": {
+        "default": "http://127.0.0.1:8551",
+        "description": "HTTP-RPC server listening interface of engine API.",
+        "example": null,
+        "type": "str"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      },
+      "jwtSecretFile": {
+        "default": null,
+        "description": "Path to the token that ensures safe connection between CL and EL.",
+        "example": "/var/mnt/besu/jwt.hex",
+        "type": "nullOr (str)"
+      }
+    },
+    "erigon": {
+      "dataDir": {
+        "default": "/var/mnt/erigon",
+        "description": "Data directory for the blockchain.",
+        "example": null,
+        "type": "path"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable Erigon.",
+        "example": null,
+        "type": "bool"
+      },
+      "endpoint": {
+        "default": "http://127.0.0.1:8551",
+        "description": "HTTP-RPC server listening interface of engine API.",
+        "example": null,
+        "type": "str"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      },
+      "jwtSecretFile": {
+        "default": null,
+        "description": "Path to the token that ensures safe connection between CL and EL.",
+        "example": "/var/mnt/erigon/jwt.hex",
+        "type": "nullOr (str)"
+      }
+    },
+    "geth": {
+      "dataDir": {
+        "default": "/var/mnt/geth",
+        "description": "Data directory for the blockchain.",
+        "example": null,
+        "type": "path"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable Geth.",
+        "example": null,
+        "type": "bool"
+      },
+      "endpoint": {
+        "default": "http://127.0.0.1:8551",
+        "description": "HTTP-RPC server listening interface of engine API.",
+        "example": null,
+        "type": "str"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      },
+      "jwtSecretFile": {
+        "default": null,
+        "description": "Path to the token that ensures safe connection between CL and EL.",
+        "example": "/var/mnt/geth/jwt.hex",
+        "type": "nullOr (str)"
+      }
+    },
+    "nethermind": {
+      "dataDir": {
+        "default": "/var/mnt/nethermind",
+        "description": "Data directory for the blockchain.",
+        "example": null,
+        "type": "path"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable Nethermind.",
+        "example": null,
+        "type": "bool"
+      },
+      "endpoint": {
+        "default": "http://127.0.0.1:8551",
+        "description": "HTTP-RPC server listening interface of engine API.",
+        "example": null,
+        "type": "str"
+      },
+      "extraOptions": {
+        "default": null,
+        "description": "Additional command-line arguments.",
+        "example": [
+          "--some-extra-option=value"
+        ],
+        "type": "nullOr (listOf (str))"
+      },
+      "jwtSecretFile": {
+        "default": null,
+        "description": "Path to the token that ensures safe connection between CL and EL.",
+        "example": "/var/mnt/nethermind/jwt.hex",
+        "type": "nullOr (str)"
+      }
+    }
+  },
+  "localization": {
+    "hostname": {
+      "default": "homestaker",
+      "description": "The name of the machine.",
+      "example": null,
+      "type": "str"
+    },
+    "timezone": {
+      "default": null,
+      "description": "The time zone used when displaying times and dates.",
+      "example": "America/New_York",
+      "type": "nullOr (str)"
+    }
+  },
+  "mounts": {
+    "default": {},
+    "description": "A set of systemd mount definitions.",
+    "example": {
+      "myMount": {
+        "before": [
+          "some-other.service"
+        ],
+        "enable": true,
+        "options": [
+          "noatime"
+        ],
+        "type": "btrfs",
+        "wantedBy": [
+          "multi-user.target"
+        ],
+        "what": "/dev/sda1",
+        "where": "/mnt"
+      }
+    },
+    "options": {
+      "before": {
+        "default": [],
+        "description": "If the specified units are started at the same time as this unit, delay them until this unit has started.\n",
+        "example": [
+          "some-system.service"
+        ],
+        "type": "listOf (str)"
+      },
+      "description": {
+        "default": "storage device",
+        "description": "Description of this unit used in systemd messages and progress indicators.\n",
+        "example": "ethereum mainnet",
+        "type": "str"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable Whether to enable this mount..",
+        "example": true,
+        "type": "bool"
+      },
+      "options": {
+        "default": "noatime",
+        "description": "Options used to mount the file system; strings concatenated with \",\".\n",
+        "example": "noatime",
+        "type": "str"
+      },
+      "type": {
+        "default": "auto",
+        "description": "File system type.",
+        "example": "btrfs",
+        "type": "str"
+      },
+      "wantedBy": {
+        "default": [
+          "multi-user.target"
+        ],
+        "description": "Units that want (i.e. depend on) this unit.",
+        "example": [
+          "some-system.target"
+        ],
+        "type": "listOf (str)"
+      },
+      "what": {
+        "default": null,
+        "description": "Absolute path of device node, file or other resource. (Mandatory)\n",
+        "example": "/dev/sda1",
+        "type": "str"
+      },
+      "where": {
+        "default": null,
+        "description": "Absolute path of a directory of the mount point. Will be created if it doesn’t exist. (Mandatory)\n",
+        "example": "/mnt",
+        "type": "str"
+      }
+    },
+    "type": "attrsOf (submodule)"
+  },
+  "ssh": {
+    "authorizedKeys": {
+      "default": [],
+      "description": "A list of public SSH keys to be added to the user's authorized keys.",
+      "example": null,
+      "type": "listOf (str)"
+    },
+    "privateKeyFile": {
+      "default": null,
+      "description": "Path to the Ed25519 SSH host key. If absent, the key will be generated automatically.",
+      "example": "/var/mnt/secrets/ssh/id_ed25519",
+      "type": "nullOr (path)"
+    }
+  },
+  "vpn": {
+    "wireguard": {
+      "configFile": {
+        "default": "/var/mnt/secrets/wg0.conf",
+        "description": "A file path for the wg-quick configuration.",
+        "example": null,
+        "type": "path"
+      },
+      "enable": {
+        "default": false,
+        "description": "Whether to enable WireGuard.",
+        "example": null,
+        "type": "bool"
+      }
+    }
+  }
+}
