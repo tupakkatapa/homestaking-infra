@@ -23,6 +23,84 @@
       "default": {},
       "description": "An attribute set with string values.",
       "example": {"key": "value"}
+    },
+    "option_5": {
+      "type": "nullOr (listOf (str))",
+      "default": null,
+      "description": "Either null or a list of strings.",
+      "example": ["x", "y"]
+    },
+    "option_6": {
+      "type": "listOf (nullOr (str))",
+      "default": [],
+      "description": "A list where each element is either null or a string.",
+      "example": [null, "z"]
+    },
+    "option_7": {
+      "type": "nullOr (attrsOf (str))",
+      "default": null,
+      "description": "Either null or an attribute set of strings.",
+      "example": {"a": "alpha"}
+    },
+    "option_8": {
+      "type": "attrsOf (nullOr (str))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a string.",
+      "example": {"a": null, "b": "beta"}
+    },
+    "option_9": {
+      "type": "listOf (attrsOf (str))",
+      "default": [],
+      "description": "A list where each element is an attribute set of strings.",
+      "example": [ {"a": "alpha"}, {"b": "beta"} ]
+    },
+    "option_10": {
+      "type": "attrsOf (listOf (str))",
+      "default": {},
+      "description": "An attribute set where each value is a list of strings.",
+      "example": {"a": ["alpha", "beta"]}
+    },
+    "option_11": {
+      "type": "nullOr (listOf (attrsOf (str)))",
+      "default": null,
+      "description": "Either null or a list of attribute sets of strings.",
+      "example": [ {"a": "alpha"} ]
+    },
+    "option_12": {
+      "type": "listOf (nullOr (attrsOf (str)))",
+      "default": [],
+      "description": "A list where each element is either null or an attribute set of strings.",
+      "example": [ null, {"a": "alpha"} ]
+    },
+    "option_13": {
+      "type": "attrsOf (nullOr (listOf (str)))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a list of strings.",
+      "example": {"a": null, "b": ["foo", "bar"]}
+    },
+    "option_14": {
+      "type": "nullOr (attrsOf (listOf (str)))",
+      "default": null,
+      "description": "Either null or an attribute set where each value is a list of strings.",
+      "example": {"c": ["delta"]}
+    },
+    "option_15": {
+      "type": "listOf (attrsOf (nullOr (str)))",
+      "default": [],
+      "description": "A list where each element is an attribute set whose values are either null or strings.",
+      "example": [ {"a": null}, {"b": "epsilon"} ]
+    },
+    "option_16": {
+      "type": "attrsOf (listOf (nullOr (str)))",
+      "default": {},
+      "description": "An attribute set where each value is a list that may contain null or strings.",
+      "example": {"d": [null, "zeta"]}
+    },
+    "option_17": {
+      "type": "nullOr (listOf (nullOr (attrsOf (str))))",
+      "default": null,
+      "description": "Either null or a list where each element is either null or an attribute set of strings.",
+      "example": [ null, {"a": "alpha"} ]
     }
   },
   "int_testOptions": {
@@ -49,6 +127,84 @@
       "default": {},
       "description": "An attribute set with integer values.",
       "example": { "key": 10 }
+    },
+    "option_5": {
+      "type": "nullOr (listOf (int))",
+      "default": null,
+      "description": "Either null or a list of integers.",
+      "example": [4, 5]
+    },
+    "option_6": {
+      "type": "listOf (nullOr (int))",
+      "default": [],
+      "description": "A list where each element is either null or an integer.",
+      "example": [null, 6]
+    },
+    "option_7": {
+      "type": "nullOr (attrsOf (int))",
+      "default": null,
+      "description": "Either null or an attribute set of integers.",
+      "example": { "a": 10 }
+    },
+    "option_8": {
+      "type": "attrsOf (nullOr (int))",
+      "default": {},
+      "description": "An attribute set where each value is either null or an integer.",
+      "example": { "a": null, "b": 20 }
+    },
+    "option_9": {
+      "type": "listOf (attrsOf (int))",
+      "default": [],
+      "description": "A list where each element is an attribute set of integers.",
+      "example": [ { "a": 1 }, { "b": 2 } ]
+    },
+    "option_10": {
+      "type": "attrsOf (listOf (int))",
+      "default": {},
+      "description": "An attribute set where each value is a list of integers.",
+      "example": { "a": [3, 4] }
+    },
+    "option_11": {
+      "type": "nullOr (listOf (attrsOf (int)))",
+      "default": null,
+      "description": "Either null or a list of attribute sets of integers.",
+      "example": [ { "a": 5 } ]
+    },
+    "option_12": {
+      "type": "listOf (nullOr (attrsOf (int)))",
+      "default": [],
+      "description": "A list where each element is either null or an attribute set of integers.",
+      "example": [ null, { "a": 6 } ]
+    },
+    "option_13": {
+      "type": "attrsOf (nullOr (listOf (int)))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a list of integers.",
+      "example": { "a": null, "b": [7, 8] }
+    },
+    "option_14": {
+      "type": "nullOr (attrsOf (listOf (int)))",
+      "default": null,
+      "description": "Either null or an attribute set where each value is a list of integers.",
+      "example": { "c": [9, 10] }
+    },
+    "option_15": {
+      "type": "listOf (attrsOf (nullOr (int)))",
+      "default": [],
+      "description": "A list where each element is an attribute set whose values are either null or integers.",
+      "example": [ { "a": null }, { "b": 11 } ]
+    },
+    "option_16": {
+      "type": "attrsOf (listOf (nullOr (int)))",
+      "default": {},
+      "description": "An attribute set where each value is a list containing elements that are either null or integers.",
+      "example": { "d": [null, 12] }
+    },
+    "option_17": {
+      "type": "nullOr (listOf (nullOr (attrsOf (int))))",
+      "default": null,
+      "description": "Either null or a list where each element is either null or an attribute set of integers.",
+      "example": [ null, { "a": 13 } ]
     }
   },
   "bool_testOptions": {
@@ -75,6 +231,84 @@
       "default": {},
       "description": "An attribute set with boolean values.",
       "example": { "a": true }
+    },
+    "option_5": {
+      "type": "nullOr (listOf (bool))",
+      "default": null,
+      "description": "Either null or a list of booleans.",
+      "example": [false, true]
+    },
+    "option_6": {
+      "type": "listOf (nullOr (bool))",
+      "default": [],
+      "description": "A list where each element is either null or a boolean.",
+      "example": [null, false]
+    },
+    "option_7": {
+      "type": "nullOr (attrsOf (bool))",
+      "default": null,
+      "description": "Either null or an attribute set of booleans.",
+      "example": { "a": false }
+    },
+    "option_8": {
+      "type": "attrsOf (nullOr (bool))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a boolean.",
+      "example": { "a": null, "b": true }
+    },
+    "option_9": {
+      "type": "listOf (attrsOf (bool))",
+      "default": [],
+      "description": "A list where each element is an attribute set of booleans.",
+      "example": [ { "a": true }, { "b": false } ]
+    },
+    "option_10": {
+      "type": "attrsOf (listOf (bool))",
+      "default": {},
+      "description": "An attribute set where each value is a list of booleans.",
+      "example": { "a": [true, false] }
+    },
+    "option_11": {
+      "type": "nullOr (listOf (attrsOf (bool)))",
+      "default": null,
+      "description": "Either null or a list of attribute sets of booleans.",
+      "example": [ { "a": true } ]
+    },
+    "option_12": {
+      "type": "listOf (nullOr (attrsOf (bool)))",
+      "default": [],
+      "description": "A list where each element is either null or an attribute set of booleans.",
+      "example": [null, { "a": false }]
+    },
+    "option_13": {
+      "type": "attrsOf (nullOr (listOf (bool)))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a list of booleans.",
+      "example": { "a": null, "b": [true] }
+    },
+    "option_14": {
+      "type": "nullOr (attrsOf (listOf (bool)))",
+      "default": null,
+      "description": "Either null or an attribute set where each value is a list of booleans.",
+      "example": { "a": [false] }
+    },
+    "option_15": {
+      "type": "listOf (attrsOf (nullOr (bool)))",
+      "default": [],
+      "description": "A list where each element is an attribute set whose values are either null or booleans.",
+      "example": [ { "a": null }, { "b": true } ]
+    },
+    "option_16": {
+      "type": "attrsOf (listOf (nullOr (bool)))",
+      "default": {},
+      "description": "An attribute set where each value is a list containing elements that are either null or booleans.",
+      "example": { "a": [null, false] }
+    },
+    "option_17": {
+      "type": "nullOr (listOf (nullOr (attrsOf (bool))))",
+      "default": null,
+      "description": "Either null or a list where each element is either null or an attribute set of booleans.",
+      "example": [null, { "a": true }]
     }
   },
   "submodule_testOptions": {
@@ -93,10 +327,136 @@
       }
     },
     "option_2": {
+      "type": "nullOr (attrsOf (submodule))",
+      "default": null,
+      "description": "Either null or an attribute set of submodules.",
+      "example": { "mod1": { "dummy": "value" } },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_3": {
       "type": "listOf (attrsOf (submodule))",
+      "default": [],
+      "description": "A list where each element is an attribute set of submodules.",
+      "example": [ { "mod1": { "dummy": "value" } } ],
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_4": {
+      "type": "attrsOf (listOf (submodule))",
       "default": {},
       "description": "An attribute set where each value is a list of submodules.",
       "example": { "group1": [ { "mod1": { "dummy": "value" } } ] },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_5": {
+      "type": "nullOr (listOf (attrsOf (submodule)))",
+      "default": null,
+      "description": "Either null or a list of attribute sets of submodules.",
+      "example": [ { "mod1": { "dummy": "value" } } ],
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_6": {
+      "type": "listOf (nullOr (attrsOf (submodule)))",
+      "default": [],
+      "description": "A list where each element is either null or an attribute set of submodules.",
+      "example": [ null, { "mod1": { "dummy": "value" } } ],
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_7": {
+      "type": "attrsOf (nullOr (listOf (submodule)))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a list of submodules.",
+      "example": { "group1": null, "group2": [ { "mod1": { "dummy": "value" } } ] },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_8": {
+      "type": "nullOr (attrsOf (listOf (submodule)))",
+      "default": null,
+      "description": "Either null or an attribute set where each value is a list of submodules.",
+      "example": { "group1": [ { "mod1": { "dummy": "value" } } ] },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_9": {
+      "type": "listOf (attrsOf (nullOr (submodule)))",
+      "default": [],
+      "description": "A list where each element is an attribute set whose values are either null or submodules.",
+      "example": [ { "mod1": null }, { "mod2": { "dummy": "value" } } ],
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_10": {
+      "type": "attrsOf (listOf (nullOr (submodule)))",
+      "default": {},
+      "description": "An attribute set where each value is a list in which each element may be either null or a submodule.",
+      "example": { "group1": [ null, { "mod1": { "dummy": "value" } } ] },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_11": {
+      "type": "nullOr (listOf (nullOr (attrsOf (submodule))))",
+      "default": null,
+      "description": "Either null or a list where each element is either null or an attribute set of submodules.",
+      "example": [ null, { "mod1": { "dummy": "value" } } ],
       "options": {
         "dummy": {
           "type": "str",
