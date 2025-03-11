@@ -1,447 +1,469 @@
 {
-  "addons": {
-    "mev-boost": {
-      "enable": {
-        "default": false,
-        "description": "Whether to enable MEV-Boost.",
-        "example": null,
-        "type": "bool"
-      },
-      "endpoint": {
-        "default": "http://127.0.0.1:18550",
-        "description": "Listening interface for the MEV-Boost server.",
-        "example": null,
-        "type": "str"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      }
+  "str_testOptions": {
+    "option_1": {
+      "type": "str",
+      "default": "example",
+      "description": "Base string option.",
+      "example": "hello"
     },
-    "ssv-node": {
-      "dataDir": {
-        "default": "/var/mnt/addons/ssv",
-        "description": "Path to a persistent directory to store the node's database.",
-        "example": null,
-        "type": "path"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      },
-      "privateKeyFile": {
-        "default": "/var/mnt/addons/ssv/ssv_operator_key",
-        "description": "Path to the private SSV operator key.",
-        "example": null,
-        "type": "path"
-      },
-      "privateKeyPasswordFile": {
-        "default": "/var/mnt/addons/ssv/password",
-        "description": "Path to the password file of SSV operator key",
-        "example": null,
-        "type": "path"
-      }
-    }
-  },
-  "consensus": {
-    "lighthouse": {
-      "dataDir": {
-        "default": "/var/mnt/lighthouse",
-        "description": "Data directory for the blockchain.",
-        "example": null,
-        "type": "path"
-      },
-      "enable": {
-        "default": false,
-        "description": "Whether to enable Lighthouse.",
-        "example": null,
-        "type": "bool"
-      },
-      "endpoint": {
-        "default": "http://127.0.0.1:5052",
-        "description": "HTTP server listening interface.",
-        "example": null,
-        "type": "str"
-      },
-      "execEndpoint": {
-        "default": "http://127.0.0.1:8551",
-        "description": "Server endpoint for an execution layer JWT-authenticated HTTP JSON-RPC connection.",
-        "example": null,
-        "type": "str"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      },
-      "jwtSecretFile": {
-        "default": null,
-        "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/var/mnt/lighthouse/jwt.hex",
-        "type": "path"
-      },
-      "slasher": {
-        "enable": {
-          "default": false,
-          "description": "Whether to enable slasher.",
-          "example": null,
-          "type": "bool"
-        },
-        "historyLength": {
-          "default": 4096,
-          "description": "Number of epochs to store.",
-          "example": null,
-          "type": "int"
-        },
-        "maxDatabaseSize": {
-          "default": 256,
-          "description": "Maximum size of the slasher database in gigabytes.",
-          "example": null,
-          "type": "int"
-        }
-      }
-    },
-    "nimbus": {
-      "dataDir": {
-        "default": "/var/mnt/nimbus",
-        "description": "Data directory for the blockchain.",
-        "example": null,
-        "type": "path"
-      },
-      "enable": {
-        "default": false,
-        "description": "Whether to enable Nimbus.",
-        "example": null,
-        "type": "bool"
-      },
-      "endpoint": {
-        "default": "http://127.0.0.1:5052",
-        "description": "JSON-HTTP server listening interface.",
-        "example": null,
-        "type": "str"
-      },
-      "execEndpoint": {
-        "default": "http://127.0.0.1:8551",
-        "description": "Server endpoint for an execution layer JWT-authenticated HTTP JSON-RPC connection.",
-        "example": null,
-        "type": "str"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      },
-      "jwtSecretFile": {
-        "default": null,
-        "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/var/mnt/nimbus/jwt.hex",
-        "type": "path"
-      }
-    },
-    "prysm": {
-      "dataDir": {
-        "default": "/var/mnt/prysm",
-        "description": "Data directory for the blockchain.",
-        "example": null,
-        "type": "path"
-      },
-      "enable": {
-        "default": false,
-        "description": "Whether to enable Prysm.",
-        "example": null,
-        "type": "bool"
-      },
-      "endpoint": {
-        "default": "http://127.0.0.1:3500",
-        "description": "JSON-HTTP server listening interface.",
-        "example": null,
-        "type": "str"
-      },
-      "execEndpoint": {
-        "default": "http://127.0.0.1:8551",
-        "description": "Server endpoint for an execution layer JWT-authenticated HTTP JSON-RPC connection.",
-        "example": null,
-        "type": "str"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      },
-      "jwtSecretFile": {
-        "default": null,
-        "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/var/mnt/prysm/jwt.hex",
-        "type": "path"
-      },
-      "slasher": {
-        "enable": {
-          "default": false,
-          "description": "Whether to enable historical slasher.",
-          "example": null,
-          "type": "bool"
-        }
-      }
-    },
-    "teku": {
-      "dataDir": {
-        "default": "/var/mnt/teku",
-        "description": "Data directory for the blockchain.",
-        "example": null,
-        "type": "path"
-      },
-      "enable": {
-        "default": false,
-        "description": "Whether to enable Teku.",
-        "example": null,
-        "type": "bool"
-      },
-      "endpoint": {
-        "default": "http://127.0.0.1:5051",
-        "description": "JSON-HTTP server listening interface.",
-        "example": null,
-        "type": "str"
-      },
-      "execEndpoint": {
-        "default": "http://127.0.0.1:8551",
-        "description": "Server endpoint for an execution layer JWT-authenticated HTTP JSON-RPC connection.",
-        "example": null,
-        "type": "str"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      },
-      "jwtSecretFile": {
-        "default": null,
-        "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/var/mnt/teku/jwt.hex",
-        "type": "path"
-      }
-    }
-  },
-  "execution": {
-    "besu": {
-      "dataDir": {
-        "default": "/var/mnt/besu",
-        "description": "Data directory for the blockchain.",
-        "example": null,
-        "type": "path"
-      },
-      "enable": {
-        "default": false,
-        "description": "Whether to enable Besu.",
-        "example": null,
-        "type": "bool"
-      },
-      "endpoint": {
-        "default": "http://127.0.0.1:8551",
-        "description": "HTTP-RPC server listening interface of engine API.",
-        "example": null,
-        "type": "str"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      },
-      "jwtSecretFile": {
-        "default": null,
-        "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/var/mnt/besu/jwt.hex",
-        "type": "str"
-      }
-    },
-    "erigon": {
-      "dataDir": {
-        "default": "/var/mnt/erigon",
-        "description": "Data directory for the blockchain.",
-        "example": null,
-        "type": "path"
-      },
-      "enable": {
-        "default": false,
-        "description": "Whether to enable Erigon.",
-        "example": null,
-        "type": "bool"
-      },
-      "endpoint": {
-        "default": "http://127.0.0.1:8551",
-        "description": "HTTP-RPC server listening interface of engine API.",
-        "example": null,
-        "type": "str"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      },
-      "jwtSecretFile": {
-        "default": null,
-        "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/var/mnt/erigon/jwt.hex",
-        "type": "str"
-      }
-    },
-    "geth": {
-      "dataDir": {
-        "default": "/var/mnt/geth",
-        "description": "Data directory for the blockchain.",
-        "example": null,
-        "type": "path"
-      },
-      "enable": {
-        "default": false,
-        "description": "Whether to enable Geth.",
-        "example": null,
-        "type": "bool"
-      },
-      "endpoint": {
-        "default": "http://127.0.0.1:8551",
-        "description": "HTTP-RPC server listening interface of engine API.",
-        "example": null,
-        "type": "str"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      },
-      "jwtSecretFile": {
-        "default": null,
-        "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/var/mnt/geth/jwt.hex",
-        "type": "str"
-      }
-    },
-    "nethermind": {
-      "dataDir": {
-        "default": "/var/mnt/nethermind",
-        "description": "Data directory for the blockchain.",
-        "example": null,
-        "type": "path"
-      },
-      "enable": {
-        "default": false,
-        "description": "Whether to enable Nethermind.",
-        "example": null,
-        "type": "bool"
-      },
-      "endpoint": {
-        "default": "http://127.0.0.1:8551",
-        "description": "HTTP-RPC server listening interface of engine API.",
-        "example": null,
-        "type": "str"
-      },
-      "extraOptions": {
-        "default": null,
-        "description": "Additional command-line arguments.",
-        "example": [
-          "--some-extra-option=value"
-        ],
-        "type": "listOf"
-      },
-      "jwtSecretFile": {
-        "default": null,
-        "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/var/mnt/nethermind/jwt.hex",
-        "type": "str"
-      }
-    }
-  },
-  "localization": {
-    "hostname": {
-      "default": "homestaker",
-      "description": "The name of the machine.",
-      "example": null,
-      "type": "str"
-    },
-    "timezone": {
+    "option_2": {
+      "type": "nullOr (str)",
       "default": null,
-      "description": "The time zone used when displaying times and dates.",
-      "example": "America/New_York",
-      "type": "str"
-    }
-  },
-  "mounts": {
-    "default": {},
-    "description": "A set of systemd mount definitions.",
-    "example": {
-      "myMount": {
-        "before": [
-          "some-other.service"
-        ],
-        "enable": true,
-        "options": [
-          "noatime"
-        ],
-        "type": "btrfs",
-        "wantedBy": [
-          "multi-user.target"
-        ],
-        "what": "/dev/sda1",
-        "where": "/mnt"
-      }
+      "description": "Either null or a string.",
+      "example": "world"
     },
-    "type": "attrsOf"
-  },
-  "ssh": {
-    "authorizedKeys": {
+    "option_3": {
+      "type": "listOf (str)",
       "default": [],
-      "description": "A list of public SSH keys to be added to the user's authorized keys.",
-      "example": null,
-      "type": "listOf"
+      "description": "A list of strings.",
+      "example": ["a", "b"]
     },
-    "privateKeyFile": {
+    "option_4": {
+      "type": "attrsOf (str)",
+      "default": {},
+      "description": "An attribute set with string values.",
+      "example": {"key": "value"}
+    },
+    "option_5": {
+      "type": "nullOr (listOf (str))",
       "default": null,
-      "description": "Path to the Ed25519 SSH host key. If absent, the key will be generated automatically.",
-      "example": "/var/mnt/secrets/ssh/id_ed25519",
-      "type": "path"
+      "description": "Either null or a list of strings.",
+      "example": ["x", "y"]
+    },
+    "option_6": {
+      "type": "listOf (nullOr (str))",
+      "default": [],
+      "description": "A list where each element is either null or a string.",
+      "example": [null, "z"]
+    },
+    "option_7": {
+      "type": "nullOr (attrsOf (str))",
+      "default": null,
+      "description": "Either null or an attribute set of strings.",
+      "example": {"a": "alpha"}
+    },
+    "option_8": {
+      "type": "attrsOf (nullOr (str))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a string.",
+      "example": {"a": null, "b": "beta"}
+    },
+    "option_9": {
+      "type": "listOf (attrsOf (str))",
+      "default": [],
+      "description": "A list where each element is an attribute set of strings.",
+      "example": [ {"a": "alpha"}, {"b": "beta"} ]
+    },
+    "option_10": {
+      "type": "attrsOf (listOf (str))",
+      "default": {},
+      "description": "An attribute set where each value is a list of strings.",
+      "example": {"a": ["alpha", "beta"]}
+    },
+    "option_11": {
+      "type": "nullOr (listOf (attrsOf (str)))",
+      "default": null,
+      "description": "Either null or a list of attribute sets of strings.",
+      "example": [ {"a": "alpha"} ]
+    },
+    "option_12": {
+      "type": "listOf (nullOr (attrsOf (str)))",
+      "default": [],
+      "description": "A list where each element is either null or an attribute set of strings.",
+      "example": [ null, {"a": "alpha"} ]
+    },
+    "option_13": {
+      "type": "attrsOf (nullOr (listOf (str)))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a list of strings.",
+      "example": {"a": null, "b": ["foo", "bar"]}
+    },
+    "option_14": {
+      "type": "nullOr (attrsOf (listOf (str)))",
+      "default": null,
+      "description": "Either null or an attribute set where each value is a list of strings.",
+      "example": {"c": ["delta"]}
+    },
+    "option_15": {
+      "type": "listOf (attrsOf (nullOr (str)))",
+      "default": [],
+      "description": "A list where each element is an attribute set whose values are either null or strings.",
+      "example": [ {"a": null}, {"b": "epsilon"} ]
+    },
+    "option_16": {
+      "type": "attrsOf (listOf (nullOr (str)))",
+      "default": {},
+      "description": "An attribute set where each value is a list that may contain null or strings.",
+      "example": {"d": [null, "zeta"]}
+    },
+    "option_17": {
+      "type": "nullOr (listOf (nullOr (attrsOf (str))))",
+      "default": null,
+      "description": "Either null or a list where each element is either null or an attribute set of strings.",
+      "example": [ null, {"a": "alpha"} ]
     }
   },
-  "vpn": {
-    "wireguard": {
-      "configFile": {
-        "default": "/var/mnt/secrets/wg0.conf",
-        "description": "A file path for the wg-quick configuration.",
-        "example": null,
-        "type": "path"
-      },
-      "enable": {
-        "default": false,
-        "description": "Whether to enable WireGuard.",
-        "example": null,
-        "type": "bool"
+  "int_testOptions": {
+    "option_1": {
+      "type": "int",
+      "default": 42,
+      "description": "Base integer option.",
+      "example": 100
+    },
+    "option_2": {
+      "type": "nullOr (int)",
+      "default": null,
+      "description": "Either null or an integer.",
+      "example": 7
+    },
+    "option_3": {
+      "type": "listOf (int)",
+      "default": [],
+      "description": "A list of integers.",
+      "example": [1, 2, 3]
+    },
+    "option_4": {
+      "type": "attrsOf (int)",
+      "default": {},
+      "description": "An attribute set with integer values.",
+      "example": { "key": 10 }
+    },
+    "option_5": {
+      "type": "nullOr (listOf (int))",
+      "default": null,
+      "description": "Either null or a list of integers.",
+      "example": [4, 5]
+    },
+    "option_6": {
+      "type": "listOf (nullOr (int))",
+      "default": [],
+      "description": "A list where each element is either null or an integer.",
+      "example": [null, 6]
+    },
+    "option_7": {
+      "type": "nullOr (attrsOf (int))",
+      "default": null,
+      "description": "Either null or an attribute set of integers.",
+      "example": { "a": 10 }
+    },
+    "option_8": {
+      "type": "attrsOf (nullOr (int))",
+      "default": {},
+      "description": "An attribute set where each value is either null or an integer.",
+      "example": { "a": null, "b": 20 }
+    },
+    "option_9": {
+      "type": "listOf (attrsOf (int))",
+      "default": [],
+      "description": "A list where each element is an attribute set of integers.",
+      "example": [ { "a": 1 }, { "b": 2 } ]
+    },
+    "option_10": {
+      "type": "attrsOf (listOf (int))",
+      "default": {},
+      "description": "An attribute set where each value is a list of integers.",
+      "example": { "a": [3, 4] }
+    },
+    "option_11": {
+      "type": "nullOr (listOf (attrsOf (int)))",
+      "default": null,
+      "description": "Either null or a list of attribute sets of integers.",
+      "example": [ { "a": 5 } ]
+    },
+    "option_12": {
+      "type": "listOf (nullOr (attrsOf (int)))",
+      "default": [],
+      "description": "A list where each element is either null or an attribute set of integers.",
+      "example": [ null, { "a": 6 } ]
+    },
+    "option_13": {
+      "type": "attrsOf (nullOr (listOf (int)))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a list of integers.",
+      "example": { "a": null, "b": [7, 8] }
+    },
+    "option_14": {
+      "type": "nullOr (attrsOf (listOf (int)))",
+      "default": null,
+      "description": "Either null or an attribute set where each value is a list of integers.",
+      "example": { "c": [9, 10] }
+    },
+    "option_15": {
+      "type": "listOf (attrsOf (nullOr (int)))",
+      "default": [],
+      "description": "A list where each element is an attribute set whose values are either null or integers.",
+      "example": [ { "a": null }, { "b": 11 } ]
+    },
+    "option_16": {
+      "type": "attrsOf (listOf (nullOr (int)))",
+      "default": {},
+      "description": "An attribute set where each value is a list containing elements that are either null or integers.",
+      "example": { "d": [null, 12] }
+    },
+    "option_17": {
+      "type": "nullOr (listOf (nullOr (attrsOf (int))))",
+      "default": null,
+      "description": "Either null or a list where each element is either null or an attribute set of integers.",
+      "example": [ null, { "a": 13 } ]
+    }
+  },
+  "bool_testOptions": {
+    "option_1": {
+      "type": "bool",
+      "default": false,
+      "description": "Base boolean option.",
+      "example": true
+    },
+    "option_2": {
+      "type": "nullOr (bool)",
+      "default": null,
+      "description": "Either null or a boolean.",
+      "example": true
+    },
+    "option_3": {
+      "type": "listOf (bool)",
+      "default": [],
+      "description": "A list of booleans.",
+      "example": [true, false]
+    },
+    "option_4": {
+      "type": "attrsOf (bool)",
+      "default": {},
+      "description": "An attribute set with boolean values.",
+      "example": { "a": true }
+    },
+    "option_5": {
+      "type": "nullOr (listOf (bool))",
+      "default": null,
+      "description": "Either null or a list of booleans.",
+      "example": [false, true]
+    },
+    "option_6": {
+      "type": "listOf (nullOr (bool))",
+      "default": [],
+      "description": "A list where each element is either null or a boolean.",
+      "example": [null, false]
+    },
+    "option_7": {
+      "type": "nullOr (attrsOf (bool))",
+      "default": null,
+      "description": "Either null or an attribute set of booleans.",
+      "example": { "a": false }
+    },
+    "option_8": {
+      "type": "attrsOf (nullOr (bool))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a boolean.",
+      "example": { "a": null, "b": true }
+    },
+    "option_9": {
+      "type": "listOf (attrsOf (bool))",
+      "default": [],
+      "description": "A list where each element is an attribute set of booleans.",
+      "example": [ { "a": true }, { "b": false } ]
+    },
+    "option_10": {
+      "type": "attrsOf (listOf (bool))",
+      "default": {},
+      "description": "An attribute set where each value is a list of booleans.",
+      "example": { "a": [true, false] }
+    },
+    "option_11": {
+      "type": "nullOr (listOf (attrsOf (bool)))",
+      "default": null,
+      "description": "Either null or a list of attribute sets of booleans.",
+      "example": [ { "a": true } ]
+    },
+    "option_12": {
+      "type": "listOf (nullOr (attrsOf (bool)))",
+      "default": [],
+      "description": "A list where each element is either null or an attribute set of booleans.",
+      "example": [null, { "a": false }]
+    },
+    "option_13": {
+      "type": "attrsOf (nullOr (listOf (bool)))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a list of booleans.",
+      "example": { "a": null, "b": [true] }
+    },
+    "option_14": {
+      "type": "nullOr (attrsOf (listOf (bool)))",
+      "default": null,
+      "description": "Either null or an attribute set where each value is a list of booleans.",
+      "example": { "a": [false] }
+    },
+    "option_15": {
+      "type": "listOf (attrsOf (nullOr (bool)))",
+      "default": [],
+      "description": "A list where each element is an attribute set whose values are either null or booleans.",
+      "example": [ { "a": null }, { "b": true } ]
+    },
+    "option_16": {
+      "type": "attrsOf (listOf (nullOr (bool)))",
+      "default": {},
+      "description": "An attribute set where each value is a list containing elements that are either null or booleans.",
+      "example": { "a": [null, false] }
+    },
+    "option_17": {
+      "type": "nullOr (listOf (nullOr (attrsOf (bool))))",
+      "default": null,
+      "description": "Either null or a list where each element is either null or an attribute set of booleans.",
+      "example": [null, { "a": true }]
+    }
+  },
+  "submodule_testOptions": {
+    "option_1": {
+      "type": "attrsOf (submodule)",
+      "default": {},
+      "description": "An attribute set where each value is a submodule.",
+      "example": { "mod1": { "dummy": "value" } },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_2": {
+      "type": "nullOr (attrsOf (submodule))",
+      "default": null,
+      "description": "Either null or an attribute set of submodules.",
+      "example": { "mod1": { "dummy": "value" } },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_3": {
+      "type": "listOf (attrsOf (submodule))",
+      "default": [],
+      "description": "A list where each element is an attribute set of submodules.",
+      "example": [ { "mod1": { "dummy": "value" } } ],
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_4": {
+      "type": "attrsOf (listOf (submodule))",
+      "default": {},
+      "description": "An attribute set where each value is a list of submodules.",
+      "example": { "group1": [ { "mod1": { "dummy": "value" } } ] },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_5": {
+      "type": "nullOr (listOf (attrsOf (submodule)))",
+      "default": null,
+      "description": "Either null or a list of attribute sets of submodules.",
+      "example": [ { "mod1": { "dummy": "value" } } ],
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_6": {
+      "type": "listOf (nullOr (attrsOf (submodule)))",
+      "default": [],
+      "description": "A list where each element is either null or an attribute set of submodules.",
+      "example": [ null, { "mod1": { "dummy": "value" } } ],
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_7": {
+      "type": "attrsOf (nullOr (listOf (submodule)))",
+      "default": {},
+      "description": "An attribute set where each value is either null or a list of submodules.",
+      "example": { "group1": null, "group2": [ { "mod1": { "dummy": "value" } } ] },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_8": {
+      "type": "nullOr (attrsOf (listOf (submodule)))",
+      "default": null,
+      "description": "Either null or an attribute set where each value is a list of submodules.",
+      "example": { "group1": [ { "mod1": { "dummy": "value" } } ] },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_9": {
+      "type": "listOf (attrsOf (nullOr (submodule)))",
+      "default": [],
+      "description": "A list where each element is an attribute set whose values are either null or submodules.",
+      "example": [ { "mod1": null }, { "mod2": { "dummy": "value" } } ],
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_10": {
+      "type": "attrsOf (listOf (nullOr (submodule)))",
+      "default": {},
+      "description": "An attribute set where each value is a list in which each element may be either null or a submodule.",
+      "example": { "group1": [ null, { "mod1": { "dummy": "value" } } ] },
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
+      }
+    },
+    "option_11": {
+      "type": "nullOr (listOf (nullOr (attrsOf (submodule))))",
+      "default": null,
+      "description": "Either null or a list where each element is either null or an attribute set of submodules.",
+      "example": [ null, { "mod1": { "dummy": "value" } } ],
+      "options": {
+        "dummy": {
+          "type": "str",
+          "default": "value",
+          "description": "A dummy nested option for the submodule.",
+          "example": "value"
+        }
       }
     }
   }
