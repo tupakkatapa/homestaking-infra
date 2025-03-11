@@ -472,41 +472,41 @@
     "type": "attrsOf (submodule)"
   },
   "multiMounts": {
-    "type": "listOf (attrsOf (submodule))",
     "default": [],
-    "description": "A list of mount definitions…",
+    "description": "A list of mount definitions.",
     "example": [
       {
         "enable": true,
-        "mountPoint": "/mnt/data",
-        "device": "/dev/sdb1"
+        "what": "/dev/sda1",
+        "where": "/mnt"
       },
       {
-        "enable": false,
-        "mountPoint": "/mnt/backup",
-        "device": "/dev/sdc1"
+        "enable": true,
+        "what": "/dev/sdb1",
+        "where": "/mnt"
       }
     ],
     "options": {
       "enable": {
-        "type": "bool",
         "default": false,
         "description": "Enable this mount.",
-        "example": null
+        "example": null,
+        "type": "bool"
       },
-      "mountPoint": {
-        "type": "path",
+      "what": {
         "default": null,
-        "description": "Path where the device is mounted (Mandatory).",
-        "example": "/mnt/data"
+        "description": "Absolute path of device node, file or other resource. (Mandatory)\n",
+        "example": "/dev/sda1",
+        "type": "str"
       },
-      "device": {
-        "type": "path",
+      "where": {
         "default": null,
-        "description": "Path to the device node or file to mount (Mandatory).",
-        "example": "/dev/sdb1"
+        "description": "Absolute path of a directory of the mount point. Will be created if it doesn’t exist. (Mandatory)\n",
+        "example": "/mnt",
+        "type": "str"
       }
-    }
+    },
+    "type": "listOf (attrsOf (submodule))"
   },
   "ssh": {
     "authorizedKeys": {
