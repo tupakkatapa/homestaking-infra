@@ -5,9 +5,9 @@
       "endpoint": "http://127.0.0.1:18550"
     },
     "ssv-node": {
-      "dataDir": "/var/mnt/addons/ssv",
-      "privateKeyFile": "/var/mnt/addons/ssv/ssv_operator_key",
-      "privateKeyPasswordFile": "/var/mnt/addons/ssv/password"
+      "dataDir": "/mnt/ethereum/addons/ssv",
+      "privateKeyFile": "/mnt/ethereum/addons/ssv/ssv_operator_key",
+      "privateKeyPasswordFile": "/mnt/ethereum/addons/ssv/password"
     }
   },
   "consensus": {
