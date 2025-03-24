@@ -81,7 +81,7 @@
       "wantedBy": [
         "multi-user.target"
       ],
-      "what": "/dev/disk/by-label/hometaker",
+      "what": "/dev/disk/by-label/homestaker",
       "where": "/mnt/ethereum"
     }
   },
