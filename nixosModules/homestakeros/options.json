@@ -471,43 +471,6 @@
     },
     "type": "attrsOf (submodule)"
   },
-  "multiMounts": {
-    "default": [],
-    "description": "A list of mount definitions.",
-    "example": [
-      {
-        "enable": true,
-        "what": "/dev/sda1",
-        "where": "/mnt"
-      },
-      {
-        "enable": true,
-        "what": "/dev/sdb1",
-        "where": "/mnt"
-      }
-    ],
-    "options": {
-      "enable": {
-        "default": false,
-        "description": "Enable this mount.",
-        "example": null,
-        "type": "bool"
-      },
-      "what": {
-        "default": null,
-        "description": "Absolute path of device node, file or other resource. (Mandatory)\n",
-        "example": "/dev/sda1",
-        "type": "str"
-      },
-      "where": {
-        "default": null,
-        "description": "Absolute path of a directory of the mount point. Will be created if it doesn’t exist. (Mandatory)\n",
-        "example": "/mnt",
-        "type": "str"
-      }
-    },
-    "type": "listOf (attrsOf (submodule))"
-  },
   "ssh": {
     "authorizedKeys": {
       "default": [],
