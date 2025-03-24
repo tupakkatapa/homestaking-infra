@@ -93,8 +93,8 @@
   },
   "vpn": {
     "wireguard": {
-      "configFile": "/var/mnt/secrets/wg0.conf",
-      "enable": false
+      "configFile": "/mnt/ethereum/secrets/wg0.conf",
+      "enable": true
     }
   }
 }
