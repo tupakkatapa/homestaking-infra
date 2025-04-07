@@ -14,7 +14,7 @@
         "type": "str"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
@@ -25,29 +25,17 @@
     "ssv-node": {
       "dataDir": {
         "default": "/mnt/addons/ssv",
-        "description": "Path to a persistent directory to store the node's database.",
+        "description": "Path to a persistent directory to store the node's database and keys.\nExpected files: ssv_operator_key, ssv_operator_key.pub, and password.\nKeys will be generated automatically if missing.\n",
         "example": null,
         "type": "path"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
         ],
         "type": "listOf (str)"
-      },
-      "privateKeyFile": {
-        "default": "/mnt/addons/ssv/ssv_operator_key",
-        "description": "Path to the private SSV operator key.",
-        "example": null,
-        "type": "path"
-      },
-      "privateKeyPasswordFile": {
-        "default": "/mnt/addons/ssv/password",
-        "description": "Path to the password file of SSV operator key",
-        "example": null,
-        "type": "path"
       }
     }
   },
@@ -78,7 +66,7 @@
         "type": "str"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
@@ -86,9 +74,9 @@
         "type": "listOf (str)"
       },
       "jwtSecretFile": {
-        "default": null,
+        "default": "/mnt/secrets/jwt.hex",
         "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/mnt/lighthouse/jwt.hex",
+        "example": null,
         "type": "path"
       },
       "slasher": {
@@ -138,7 +126,7 @@
         "type": "str"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
@@ -146,9 +134,9 @@
         "type": "listOf (str)"
       },
       "jwtSecretFile": {
-        "default": null,
+        "default": "/mnt/secrets/jwt.hex",
         "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/mnt/nimbus/jwt.hex",
+        "example": null,
         "type": "path"
       }
     },
@@ -178,7 +166,7 @@
         "type": "str"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
@@ -186,9 +174,9 @@
         "type": "listOf (str)"
       },
       "jwtSecretFile": {
-        "default": null,
+        "default": "/mnt/secrets/jwt.hex",
         "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/mnt/prysm/jwt.hex",
+        "example": null,
         "type": "path"
       },
       "slasher": {
@@ -226,7 +214,7 @@
         "type": "str"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
@@ -234,9 +222,9 @@
         "type": "listOf (str)"
       },
       "jwtSecretFile": {
-        "default": null,
+        "default": "/mnt/secrets/jwt.hex",
         "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/mnt/teku/jwt.hex",
+        "example": null,
         "type": "path"
       }
     }
@@ -262,7 +250,7 @@
         "type": "str"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
@@ -270,9 +258,9 @@
         "type": "listOf (str)"
       },
       "jwtSecretFile": {
-        "default": null,
+        "default": "/mnt/secrets/jwt.hex",
         "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/mnt/besu/jwt.hex",
+        "example": null,
         "type": "str"
       }
     },
@@ -296,7 +284,7 @@
         "type": "str"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
@@ -304,9 +292,9 @@
         "type": "listOf (str)"
       },
       "jwtSecretFile": {
-        "default": null,
+        "default": "/mnt/secrets/jwt.hex",
         "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/mnt/erigon/jwt.hex",
+        "example": null,
         "type": "str"
       }
     },
@@ -330,7 +318,7 @@
         "type": "str"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
@@ -338,9 +326,9 @@
         "type": "listOf (str)"
       },
       "jwtSecretFile": {
-        "default": null,
+        "default": "/mnt/secrets/jwt.hex",
         "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/mnt/geth/jwt.hex",
+        "example": null,
         "type": "str"
       }
     },
@@ -364,7 +352,7 @@
         "type": "str"
       },
       "extraOptions": {
-        "default": null,
+        "default": [],
         "description": "Additional command-line arguments.",
         "example": [
           "--some-extra-option=value"
@@ -372,9 +360,9 @@
         "type": "listOf (str)"
       },
       "jwtSecretFile": {
-        "default": null,
+        "default": "/mnt/secrets/jwt.hex",
         "description": "Path to the token that ensures safe connection between CL and EL.",
-        "example": "/mnt/nethermind/jwt.hex",
+        "example": null,
         "type": "str"
       }
     }
@@ -387,7 +375,7 @@
       "type": "str"
     },
     "timezone": {
-      "default": null,
+      "default": "UTC",
       "description": "The time zone used when displaying times and dates.",
       "example": "America/New_York",
       "type": "str"
@@ -464,7 +452,7 @@
       },
       "where": {
         "default": null,
-        "description": "Absolute path of a directory of the mount point. Will be created if it doesn’t exist. (Mandatory)\n",
+        "description": "Absolute path of a directory of the mount point. Will be created if it doesn't exist. (Mandatory)\n",
         "example": "/mnt",
         "type": "str"
       }
@@ -479,9 +467,9 @@
       "type": "listOf (str)"
     },
     "privateKeyFile": {
-      "default": null,
+      "default": "/mnt/secrets/ssh/id_ed25519",
       "description": "Path to the Ed25519 SSH host key. If absent, the key will be generated automatically.",
-      "example": "/mnt/secrets/ssh/id_ed25519",
+      "example": null,
       "type": "path"
     }
   },
